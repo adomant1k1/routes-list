@@ -1,0 +1,22 @@
+.modal-content {
+    .modal-header {
+        flex-direction: column;
+
+        button.close {
+            font-size: 30px;
+            font-weight: 300;
+            color: #949494;
+            z-index: 1;
+            top: 15px;
+            right: 25px;
+
+            &:focus {
+                outline: 0 none;
+            }
+        }
+    }
+
+    .modal-footer {
+        justify-content: start !important;
+    }
+}

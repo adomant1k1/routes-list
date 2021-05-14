@@ -1,0 +1,32 @@
+<div class="route-list-wrapper">
+    <h4>Действующие маршруты IPv4</h4>
+
+    <ng-container *ngIf="(data$ | async)">
+        <table class="table w-100">
+            <thead>
+            <tr>
+                <th *ngFor="let c of gridColumns"
+                    [style.width]="c.width"
+                    (click)="changeSort(c.sortingField)">
+                    <span class="column-header">
+                        {{ c.title }}
+                    </span>
+                    <ng-container *ngIf="sortedBy.fieldName === c.sortingField">
+                        <span class="sort-icon" *ngIf="sortedBy.isAsc">
+                            &#8593;
+                        </span>
+                        <span class="sort-icon"  *ngIf="!sortedBy.isAsc">
+                            &#8595;
+                        </span>
+                    </ng-container>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data; let i = index; trackBy: trackByItem" (click)="handleRowClick(item)">
+                    <td *ngFor="let c of gridColumns" [style.width]="c.width">{{ item[c.field] }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+</div>

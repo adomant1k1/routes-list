@@ -1,0 +1,25 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h5>Параметры статического маршрута</h5>
+
+        <button
+            type="button"
+            class="close position-absolute"
+            (click)="onCrossClick()"
+        >
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+
+        <app-edit-route #editRouteComponent [route]="route"></app-edit-route>
+    </div>
+    <div class="modal-body">
+        <button class="btn btn-outline-primary" type="button" (click)="delete()">Удалить маршрут</button>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" [disabled]="isSaveDisabled"
+                (click)="validateAndSendForm()">Сохранить
+        </button>
+        <button class="btn btn-outline-primary" type="button" (click)="onCancelClick()">Отменить</button>
+    </div>
+</div>

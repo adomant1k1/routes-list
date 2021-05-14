@@ -1,0 +1,26 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~ngx-toastr/toastr-bs4-alert';
+
+.ng-invalid.ng-touched {
+    &.form-control {
+        border-color: red;
+    }
+}
+
+.form-select {
+    cursor: pointer;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    height: 38px;
+    text-indent: 10px;
+
+    &:after {
+        &:hover {
+            border-radius: .25rem !important;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.table {
+    thead {
+        tr {
+            background-color: #f5f5f5;
+
+            th {
+                cursor: pointer;
+                border-bottom: none !important;
+
+                .sort-icon {
+                    float: right;
+                    color: blue;
+                }
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            cursor: pointer;
+        }
+    }
+}

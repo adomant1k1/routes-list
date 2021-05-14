@@ -1,0 +1,40 @@
+<div class="flex-column" [formGroup]="formGroup">
+    <div class="row no-gutters flex-nowrap mt-2">
+        <div class="col-6">
+            Адрес сети назначения<span class="mandatory">*</span>
+        </div>
+        <div class="col-6 ml-1">
+            <input class="form-control" formControlName="address">
+        </div>
+    </div>
+    <div class="row no-gutters flex-nowrap mt-2">
+        <div class="col-6">
+            Маска подсети<span class="mandatory">*</span>
+        </div>
+        <select class="form-select col-6 ml-1" formControlName="mask">
+            <option value="" disabled>Выберите маску</option>
+            <option *ngFor="let mask of maskOptions" [ngValue]="mask.value">
+                {{ mask.label }}
+            </option>
+        </select>
+    </div>
+    <div class="row no-gutters flex-nowrap mt-2">
+        <div class="col-6">
+            Адрес шлюза<span class="mandatory">*</span>
+        </div>
+        <div class="col-6 ml-1">
+            <input class="form-control" formControlName="gateway">
+        </div>
+    </div>
+    <div class="row no-gutters flex-nowrap mt-2">
+        <div class="col-6">
+            Интерфейс
+        </div>
+        <select class="form-select col-6 ml-1" formControlName="interface">
+            <option value="" disabled>Выберите интерфейс</option>
+            <option *ngFor="let int of interfaceOptions" [ngValue]="int.value">
+                {{ int.label }}
+            </option>
+        </select>
+    </div>
+</div>
